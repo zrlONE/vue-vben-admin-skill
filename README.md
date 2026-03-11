@@ -80,47 +80,67 @@
 
 ## 🚀 快速开始
 
-### 方式一：用于 Claude Code（推荐）
+### 方式一：安装到 Claude Code 全局 Skills（推荐）
 
-**什么是 Claude Code？**  
-[Claude Code](https://claude.ai/code) 是 Anthropic 官方推出的 AI 编程助手，可以在终端中运行，理解你的项目代码。
+Claude Code 支持全局 Skills 目录，安装后可在任何项目中使用此技能。
 
 **安装步骤**：
 
 ```bash
-# 1. 确保已安装 Claude Code CLI
-# macOS / Linux
-curl -fsSL https://claude.ai/install.sh | sh
+# 1. 确保 Claude Code 已安装
+claude --version
 
-# 或通过 npm
-npm install -g @anthropic-ai/claude-code
+# 2. 创建 Claude Skills 目录（如果不存在）
+mkdir -p ~/.claude/skills
 
-# 2. 克隆本项目
+# 3. 克隆本项目到 Skills 目录
+cd ~/.claude/skills
 git clone https://gitee.com/zhao-runlong/vue-vben-admin-skill.git
 
-# 3. 进入项目目录
-cd vue-vben-admin-skill
+# 4. 完成！现在在任何 Vben Admin 项目中使用 Claude Code
+cd /path/to/your-vben-project
+claude .
+# Claude 会自动加载 vue-vben-admin-skill 技能
+```
 
-# 4. 用 Claude Code 打开（会自动读取 SKILL.md）
+**验证安装**：
+
+```bash
+# 检查 Skills 目录
+ls ~/.claude/skills/vue-vben-admin-skill/SKILL.md
+
+# 或在 Claude Code 中询问
+claude .
+> 你知道 Vue Vben Admin 的架构吗？
+```
+
+**更新技能**：
+
+```bash
+cd ~/.claude/skills/vue-vben-admin-skill
+git pull origin master
+```
+
+---
+
+### 方式二：项目内使用（单项目）
+
+如果你只想在特定项目中使用：
+
+```bash
+# 1. 克隆到你的 Vben 项目目录
+cd /path/to/your-vben-project
+git clone https://gitee.com/zhao-runlong/vue-vben-admin-skill.git .claude-skill
+
+# 2. 用 Claude Code 打开项目
 claude .
 
-# 5. 开始对话！
-# Claude 会自动理解 Vue Vben Admin 架构，提供精准的代码建议
+# 3. Claude 会自动读取 .claude-skill/SKILL.md
 ```
 
-**使用示例**：
+---
 
-```
-你：如何在 Vben Admin 中创建一个带权限的用户管理页面？
-
-Claude：根据 SKILL.md 中的架构说明，你需要：
-1. 在 src/views/system/user/ 创建页面组件
-2. 在 src/router/routes/modules/system.ts 添加路由配置
-3. 配置 meta.authority 设置权限码
-...
-```
-
-### 方式二：用于 Cursor IDE
+### 方式三：用于 Cursor IDE
 
 ```bash
 # 复制 SKILL.md 到你的 Vben 项目
