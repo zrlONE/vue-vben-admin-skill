@@ -16,6 +16,41 @@
 
 ---
 
+## 🛠️ 项目生成说明
+
+本项目是一个**AI 生成项目**，主要依赖以下开源工具和服务构建：
+
+| 工具/服务 | 用途 |
+|-----------|------|
+| [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | 开源 AI 技能生成框架，用于抓取文档、分析代码、生成技能文件 |
+| [Claude Sonnet 4.6](https://www.anthropic.com/) | Anthropic 的 AI 模型，用于文档增强和知识整理 |
+| [OpenClaw](https://github.com/openclaw/openclaw) | AI 助手框架，用于项目整理、Git 操作和仓库发布 |
+
+### 生成流程
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│  Vue Vben Admin │     │  Skill Seekers  │     │  Claude Sonnet  │
+│  官方文档 + 源码 │ ──▶ │  文档抓取分析   │ ──▶ │   AI 增强      │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+                                                        │
+                                                        ▼
+                        ┌─────────────────┐     ┌─────────────────┐
+                        │  Gitee/GitHub   │ ◀── │    OpenClaw     │
+                        │    仓库发布     │     │  整理 & 发布    │
+                        └─────────────────┘     └─────────────────┘
+```
+
+### 生成细节
+
+1. **文档抓取**：使用 Skill Seekers 抓取 Vue Vben Admin 官方文档（92 页）
+2. **代码分析**：分析 GitHub 源码（437 个 Vue/TypeScript 文件）
+3. **AI 增强**：使用 Claude Sonnet 4.6 增强技能文档，添加代码示例和最佳实践
+4. **项目整理**：通过 OpenClaw 整理项目结构，生成 README、LICENSE 等文件
+5. **仓库发布**：使用 OpenClaw 执行 Git 操作，推送到 Gitee/GitHub
+
+---
+
 ## 📖 项目简介
 
 本项目是一个**AI 技能知识库**，专为 Vue Vben Admin 框架打造。它可以让 AI 编程助手（如 Claude、Cursor、Windsurf、Cline 等）深入理解 Vben Admin 的架构、组件和最佳实践，从而提供更精准的代码建议和问题解答。

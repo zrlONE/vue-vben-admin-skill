@@ -16,6 +16,41 @@ English | [简体中文](README.md)
 
 ---
 
+## 🛠️ Project Generation
+
+This is an **AI-generated project**, built primarily with the following open-source tools and services:
+
+| Tool/Service | Purpose |
+|--------------|---------|
+| [Skill Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | Open-source AI skill generation framework for documentation scraping, code analysis, and skill file generation |
+| [Claude Sonnet 4.6](https://www.anthropic.com/) | Anthropic's AI model for document enhancement and knowledge organization |
+| [OpenClaw](https://github.com/openclaw/openclaw) | AI assistant framework for project organization, Git operations, and repository publishing |
+
+### Generation Process
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│  Vue Vben Admin │     │  Skill Seekers  │     │  Claude Sonnet  │
+│  Docs + Source  │ ──▶ │  Scrape & Analyze│ ──▶ │   AI Enhance   │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+                                                        │
+                                                        ▼
+                        ┌─────────────────┐     ┌─────────────────┐
+                        │  Gitee/GitHub   │ ◀── │    OpenClaw     │
+                        │   Publishing    │     │  Organize & Push│
+                        └─────────────────┘     └─────────────────┘
+```
+
+### Generation Details
+
+1. **Documentation Scraping**: Used Skill Seekers to scrape Vue Vben Admin official docs (92 pages)
+2. **Code Analysis**: Analyzed GitHub source code (437 Vue/TypeScript files)
+3. **AI Enhancement**: Enhanced skill docs with Claude Sonnet 4.6, adding code examples and best practices
+4. **Project Organization**: Organized project structure via OpenClaw, generated README, LICENSE, etc.
+5. **Repository Publishing**: Used OpenClaw for Git operations, pushed to Gitee/GitHub
+
+---
+
 ## 📖 Overview
 
 This project is an **AI Skill Knowledge Base** designed for Vue Vben Admin framework. It enables AI coding assistants (Claude, Cursor, Windsurf, Cline, etc.) to deeply understand Vben Admin's architecture, components, and best practices.
