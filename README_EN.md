@@ -80,17 +80,44 @@ This project is an **AI Skill Knowledge Base** designed for Vue Vben Admin frame
 
 ## 🚀 Quick Start
 
-### Option 1: For Claude Code
+### Option 1: For Claude Code (Recommended)
+
+**What is Claude Code?**  
+[Claude Code](https://claude.ai/code) is Anthropic's official AI coding assistant that runs in your terminal and understands your project code.
+
+**Installation Steps**:
 
 ```bash
-# Clone the repository
-git clone https://gitee.com/your-username/vue-vben-admin-skill.git
+# 1. Make sure Claude Code CLI is installed
+# macOS / Linux
+curl -fsSL https://claude.ai/install.sh | sh
 
-# Navigate to project
+# Or via npm
+npm install -g @anthropic-ai/claude-code
+
+# 2. Clone this project
+git clone https://gitee.com/zhao-runlong/vue-vben-admin-skill.git
+
+# 3. Navigate to the project
 cd vue-vben-admin-skill
 
-# Open with Claude Code
+# 4. Open with Claude Code (automatically reads SKILL.md)
 claude .
+
+# 5. Start chatting!
+# Claude will understand Vue Vben Admin architecture and provide precise code suggestions
+```
+
+**Usage Example**:
+
+```
+You: How do I create a user management page with permissions in Vben Admin?
+
+Claude: Based on the architecture in SKILL.md, you need to:
+1. Create the page component in src/views/system/user/
+2. Add route configuration in src/router/routes/modules/system.ts
+3. Configure meta.authority for permission codes
+...
 ```
 
 ### Option 2: For Cursor IDE

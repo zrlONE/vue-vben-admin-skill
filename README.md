@@ -80,19 +80,44 @@
 
 ## 🚀 快速开始
 
-### 方式一：用于 Claude Code
+### 方式一：用于 Claude Code（推荐）
+
+**什么是 Claude Code？**  
+[Claude Code](https://claude.ai/code) 是 Anthropic 官方推出的 AI 编程助手，可以在终端中运行，理解你的项目代码。
+
+**安装步骤**：
 
 ```bash
-# 1. 克隆仓库
-git clone https://gitee.com/your-username/vue-vben-admin-skill.git
+# 1. 确保已安装 Claude Code CLI
+# macOS / Linux
+curl -fsSL https://claude.ai/install.sh | sh
 
-# 2. 进入项目目录
+# 或通过 npm
+npm install -g @anthropic-ai/claude-code
+
+# 2. 克隆本项目
+git clone https://gitee.com/zhao-runlong/vue-vben-admin-skill.git
+
+# 3. 进入项目目录
 cd vue-vben-admin-skill
 
-# 3. 用 Claude Code 打开
+# 4. 用 Claude Code 打开（会自动读取 SKILL.md）
 claude .
 
-# 4. 开始对话，AI 会自动理解 Vben Admin 架构
+# 5. 开始对话！
+# Claude 会自动理解 Vue Vben Admin 架构，提供精准的代码建议
+```
+
+**使用示例**：
+
+```
+你：如何在 Vben Admin 中创建一个带权限的用户管理页面？
+
+Claude：根据 SKILL.md 中的架构说明，你需要：
+1. 在 src/views/system/user/ 创建页面组件
+2. 在 src/router/routes/modules/system.ts 添加路由配置
+3. 配置 meta.authority 设置权限码
+...
 ```
 
 ### 方式二：用于 Cursor IDE
